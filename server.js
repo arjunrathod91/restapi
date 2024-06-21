@@ -36,8 +36,8 @@ app.post("/blogs", (req, res) => {
   const { title,img, content } = req.body;
   const newBlog = { title,img, content };
   console.log(newBlog);
-  tasks.push(newBlog);
-  res.status(200).json({ task: newBlog });
+  blogs.push(newBlog);
+  res.status(200).json({ blog: newBlog });
 });
 
 app.listen(9000, () => {
