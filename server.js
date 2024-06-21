@@ -24,11 +24,15 @@ const blogs = [
   },
 ];
 
-app.get("/tasks", (req, res) => {
-  res.json(tasks);
+//[get request]
+
+app.get("/blogs", (req, res) => {
+  res.json(blogs);
 });
 
-app.post("/tasks", (req, res) => {
+//[post request]
+
+app.post("/blogs", (req, res) => {
   const { title,img, content } = req.body;
   const newBlog = { title,img, content };
   console.log(newBlog);
