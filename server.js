@@ -21,7 +21,16 @@ const tasks = [
 ]
 
 app.get('/tasks',(req,res)=>{
+  const { name, content } = req.body;
   res.json(tasks);
+})
+
+app.post('/tasks',(req,res)=>{
+  const { name, content } = req.body;
+  const newTask = { name, content };
+  console.log(newTask)
+  tasks.push(newTask);
+  res.status(200).json({ task: newTask });
 })
 
 app.listen(9000, () => {
